@@ -1,0 +1,64 @@
+<Window x:Class="KingsmenApp.RegistrationWindow" Background="{StaticResource BgBrush}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация" Width="520" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Регистрация" Style="{StaticResource HeaderText}" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Логин" Style="{StaticResource Label}"/>
+                <TextBox x:Name="LoginBox"/>
+                <TextBlock Text="Пароль" Style="{StaticResource Label}"/>
+                <PasswordBox x:Name="PasswordBox"/>
+                <TextBlock Text="Фамилия" Style="{StaticResource Label}"/>
+                <TextBox x:Name="LastNameBox"/>
+                <TextBlock Text="Имя" Style="{StaticResource Label}"/>
+                <TextBox x:Name="FirstNameBox"/>
+                <TextBlock Text="Отчество*" Style="{StaticResource Label}"/>
+                <TextBox x:Name="MiddleNameBox"/>
+                <TextBlock Text="Дата рождения" Style="{StaticResource Label}"/>
+                <DatePicker x:Name="BirthDatePicker"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="Выберите пол" Style="{StaticResource Label}"/>
+                <ComboBox x:Name="GenderBox"/>
+                <TextBlock Text="Телефон" Style="{StaticResource Label}"/>
+                <TextBox x:Name="PhoneBox"/>
+                <TextBlock Text="E-mail*" Style="{StaticResource Label}"/>
+                <TextBox x:Name="EmailBox"/>
+                <TextBlock Text="Размер верха*" Style="{StaticResource Label}"/>
+                <ComboBox x:Name="TopSizeBox"/>
+                <TextBlock Text="Размер низа*" Style="{StaticResource Label}"/>
+                <ComboBox x:Name="BottomSizeBox"/>
+                <TextBlock Text="Размер обуви(RUS)*" Style="{StaticResource Label}"/>
+                <TextBox x:Name="ShoeSizeBox"/>
+            </StackPanel>
+        </Grid>
+
+        <Button Grid.Row="2" Content="Регистрация" Width="200" Height="50" Margin="0,15,0,0"
+                Style="{StaticResource RoundButton}" IsDefault="True"
+                HorizontalAlignment="Center" Click="RegisterButton_Click"/>
+
+        <Button Grid.Row="3" Content="Вернуться назад" Style="{StaticResource LinkButton}"
+                HorizontalAlignment="Center" Margin="0,8,0,0" Click="BackButton_Click"/>
+
+        <TextBlock Grid.Row="4" Text="* - необязательно к заполнению" Foreground="White"
+                   FontSize="11" Margin="0,10,0,0"/>
+    </Grid>
+</Window>
